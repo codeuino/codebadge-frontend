@@ -12,6 +12,7 @@ clientID_Development = <Client id from github oauth app>
 ``` 
 
 3. Create a oauth app
+
 Application Name=> Codebadge-local-login
 
 Homepage URL=> http://localhost:3000/
