@@ -12,7 +12,7 @@ clientID_Development = <Client id from github oauth app>
 ``` 
 
 Create a oauth app
-![src/images/oauth-app.png](oauth app screen shot)
+![/src/images/oauth-app.png](oauth app screen shot)
 
 3. Run app
 
