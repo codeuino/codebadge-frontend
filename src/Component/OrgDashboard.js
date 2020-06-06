@@ -2,51 +2,19 @@ import React, { Component } from "react";
 import Axios from 'axios'
 import './Dashboard.css'
 import Cookies from 'js-cookie'
-import Member from './Badges'
-import Badges from './Badges'
 import dashboardImg from './../images/dashboard.svg'
 import twitterImg from './../images/twitter-btn.svg'
 import githubImg from './../images/github-btn.svg'
 import linkImg from './../images/link-url.svg'
-import qs from "stringquery";
+import Members from './Members'
 
-// import badgesImg from './../images/badges.svg'
-
-class Dashboard extends Component {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(props){
-    super(props);
-  }
-
+class OrgDashboard extends Component {
   state={
     data:[]
   }
-  queryStringParse(string) {
-    let parsed = {}
-    if(string != '') {
-        string = string.substring(string.indexOf('?')+1)
-        let p1 = string.split('&')
-        p1.map(function(value) {
-            let params = value.split('=')
-            parsed[params[0]] = params[1]
-        });
-    }
-    return parsed
-  }
-
   componentDidMount(){
-    // const { match: { params } } = this.props;
-    // console.log(this.props.location.search)
-    var params=this.queryStringParse(window.location.href)
-    var username = params.username
-    var myacc=false
-    if(username==undefined){
-      username=Cookies.getJSON('username')
-      myacc=true
-    }
-    console.log(username)
     this.setState({ loading: true }, () => {
-      Axios.get('http://localhost:3001/github/getUserData',{params:{"token":Cookies.getJSON('token'),username:username,githubLogin:myacc}})
+      Axios.get('http://localhost:3001/github/getUserData',{params:{"token":Cookies.getJSON('token'),username:Cookies.getJSON('username'),githubLogin:Cookies.getJSON('githubLogin')}})
         .then(result => {
           console.log(result)
           this.setState({
@@ -91,8 +59,10 @@ class Dashboard extends Component {
                   <a class="nav-link btn" href="#">Request</a>
               </div>
           </div>
+          <hr/>
           <div class="child6">
-            <Badges/>
+              
+            <Members/>
           </div>
           </div>
         </div>
@@ -101,4 +71,4 @@ class Dashboard extends Component {
 }
 }
 
-export default Dashboard;
+export default OrgDashboard;

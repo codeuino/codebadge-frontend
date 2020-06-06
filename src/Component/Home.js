@@ -2,7 +2,7 @@ import React from 'react';
 import logoImg from './../images/logo.svg'
 import jsImg from './../images/js.svg'
 import './Home.css'
-import Cookies from 'js-cookie';
+import Cookies from 'js-cookie'
 var clientID;
 var frontend = window.location.origin;
 console.log(frontend);
@@ -15,11 +15,7 @@ if(process.env.NODE_ENV==="production"){
   }
 function login(){
     window.location.href=`https://github.com/login/oauth/authorize?client_id=${clientID}`;
-}
-
-function logout(){
-    Cookies.remove('token');
-    window.location.href=frontend;
+    Cookies.set('githubLogin',true)
 }
 
 const Home = () => {
@@ -35,7 +31,7 @@ const Home = () => {
                     <button class="btn btn-dark btn-responsive resp1" onClick={login}><i class="fa fa-github"></i>Signup with Github</button>
                     <button class="btn btn-danger btn-responsive resp1"><i class="fa fa-envelope"></i>Signup with Gmail</button>
                 </div>
-                <a href="/" class="p3">or Signup with email</a>
+                <a href="/register" class="p3">or Signup with email</a>
             <div></div>
         </div>  
         </div>

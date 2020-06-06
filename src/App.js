@@ -5,34 +5,20 @@ import {
   Route,
   Link
 } from "react-router-dom";
-// import Header from './Component/Header'
 import About from './Component/About'
 import Home from './Component/Home'
 import Register from './Component/Register'
 import Dashboard from './Component/Dashboard'
+import OrgDashboard from './Component/OrgDashboard'
 import Login from './Component/Login'
 import Footer from './Component/Footer'
-import { Button,Navbar,Nav } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Cookies from 'js-cookie';
 
 import logoNameImg from './images/logo_name.svg'
 
-var clientID;
 var frontend = window.location.origin;
 console.log(frontend);
-
-if(process.env.NODE_ENV==="production"){
-  // clientID="9a3d93461f11673e4164"
-  clientID=process.env.clientID_Production
-}
-else{
-  clientID=process.env.clientID_Development
-}
-function login(){
-    window.location.href=`https://github.com/login/oauth/authorize?client_id=${clientID}`;
-}
 
 function logout(){
     Cookies.remove('token');
@@ -111,10 +97,10 @@ function App() {
                     <div class="collapse navbar-collapse" id="collapsibleNavbar">
                       <ul class="navbar-nav">
                         <li class="nav-item">
-                            <Link class="nav-link btn" to="/about">About</Link>
+                            <Link class="nav-link btn" to="/user">About</Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link btn" to="/">Join Us</Link>
+                            <Link class="nav-link btn" to="/user">Join Us</Link>
                         </li>
                         <li class="nav-item">
                             <Link class="nav-link btn btn-primary font-white" to="/login" onClick={logout}>Logout</Link>
@@ -128,6 +114,9 @@ function App() {
           <Switch>
           <Route path="/user">
                 <Dashboard/> 
+            </Route>
+            <Route path="/org">
+                <OrgDashboard/> 
             </Route>
             <Route path="/organization">
                 <Register/> 
