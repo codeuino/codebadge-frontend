@@ -1,0 +1,75 @@
+.member-cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:48%;
+    min-width:300px;
+    height: 96px;
+    background: #FFFFFF;
+    padding:10px;
+    /* Neutral Solid / 200 */
+
+    border: 1px solid #E6E8EB;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.c6a{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.member-cards:last-child{
+    margin-bottom: 20vh;
+}
+
+.member-img{
+    width:58px;
+    height:58px;
+}
+.member-name{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: -0.16px;
+
+    /* Neutral Solid / 900 */
+
+    color: #141414;
+}
+
+.member-left{
+    display: flex;
+    /* justify-content: left; */
+    align-items: center;
+}
+
+.member-text{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height, or 129% */
+
+    display: flex;
+    align-items: center;
+
+    /* Neutral Solid / 600 */
+
+    color: #71757A;
+}
+
+.member-badges{
+    justify-content: flex-end;
+    /* align-items:flex-end; */
+}
+.details{
+    margin-left: 3px;
+    /* align-items: center; */
+}

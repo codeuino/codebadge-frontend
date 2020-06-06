@@ -1,0 +1,108 @@
+.badges{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* justify-content: center; */
+    /* : flex-end; */
+    flex-wrap: wrap;
+}
+
+.badge-img{
+
+    /* width:10vw; */
+    /* height:10vw; */
+    position: relative;
+    top:-25px;
+}
+
+.badge-card{
+    background: #FFFFFF;
+/* Neutral transparency / 8% */
+    min-width: 216px;
+    min-height: 190px;
+    border: 1px solid rgba(20, 20, 20, 0.08);
+    border-radius: 8px;
+    margin:30px;
+}
+
+.badge-period{
+    position: relative;
+    top:-80px;
+    right:-150px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 12px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    /* Neutral Solid / 600 */
+
+    color: #71757A;
+}
+
+.badge-contri{
+    position: relative;
+    top:-30px;
+    left:10px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: -0.16px;
+
+    /* Neutral Solid / 900 */
+
+    color: #141414;
+}
+
+.badge-tech{
+    position: relative;
+    right:-10px;
+    background: #F0F2F5;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: max-content;
+    /* letter-spacing: 0.8px; */
+    text-transform: uppercase;
+}
+
+.tech-text{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 12px;
+    /* identical to box height, or 150% */
+
+    /* display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.8px;
+    text-transform: uppercase; */
+
+    /* Neutral Solid / 600 */
+
+    color: #71757A;
+}
+
+@media screen and (max-width:1024px){
+    .badges{
+        justify-content: center;
+    }
+}
+
+.c6:last-of-type{
+    margin-bottom: 15vh;
+}
