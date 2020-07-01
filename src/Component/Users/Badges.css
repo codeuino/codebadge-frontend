@@ -15,6 +15,12 @@
     top:-25px;
 }
 
+.badges-head{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
 .badge-card{
     background: #FFFFFF;
 /* Neutral transparency / 8% */
@@ -105,4 +111,103 @@
 
 .c6:last-of-type{
     margin-bottom: 15vh;
+}
+
+#modal-dialog{
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+.modal-header{
+    border-bottom: 0px;
+}
+
+.modal-title{
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+
+    /* identical to box height, or 150% */
+    letter-spacing: -0.4px;
+
+    /* Neutral Solid / 900 */
+    color: #090A0A;
+}
+
+.heading1{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+
+    /* identical to box height, or 150% */
+    letter-spacing: -0.4px;
+
+    color: #3F8CFF;
+}
+
+.org-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.expand{
+    /* position: relative; */
+    margin-left: 1vw;
+    /* bottom:0px */
+}
+
+.label{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 40px;
+
+    /* identical to box height, or 250% */
+    letter-spacing: -0.4px;
+
+    /* Text 1 */
+    color: #76777A;
+}
+
+.modal-input{
+    /* White */
+    width: 60%;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-left: 1vw;
+}
+
+.input-desc{
+    width: 80%;
+    height: 176px;
+    padding-left: 1vw;
+    padding-top: 1vh;
+}
+
+.work{
+    display:flex;
+    flex-direction: row;
+    justify-content:start;
+}
+
+.modal-link{
+    width:80%
+}
+.links,.files{
+    width:50%;
+}
+
+.link{
+    position: relative;
+    right:100px;
 }

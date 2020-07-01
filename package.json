@@ -15,9 +15,11 @@
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-fontawesome": "^1.7.1",
+    "react-markdown-textarea": "^1.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "stringquery": "^1.0.8"
+    "stringquery": "^1.0.8",
+    "textarea-markdown": "^1.2.7"
   },
   "scripts": {
     "start": "react-scripts start",

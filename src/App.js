@@ -8,8 +8,8 @@ import {
 import About from './Component/About'
 import Home from './Component/Home'
 import Register from './Component/Register'
-import Dashboard from './Component/Dashboard'
-import OrgDashboard from './Component/OrgDashboard'
+import Dashboard from './Component/Users/Dashboard'
+import OrgDashboard from './Component/Organization/OrgDashboard'
 import Login from './Component/Login'
 import Footer from './Component/Footer'
 import './App.css';
@@ -100,6 +100,9 @@ function App() {
                             <Link class="nav-link btn" to="/user">About</Link>
                         </li>
                         <li class="nav-item">
+                            <Link class="nav-link btn" to="/organizations">Organizations</Link>
+                        </li>
+                        <li class="nav-item">
                             <Link class="nav-link btn" to="/user">Join Us</Link>
                         </li>
                         <li class="nav-item">
@@ -115,11 +118,11 @@ function App() {
           <Route path="/user">
                 <Dashboard/> 
             </Route>
-            <Route path="/org">
-                <OrgDashboard/> 
+            <Route path="/org/:display" render={(props) => <OrgDashboard {...props} />}>
+                {/* <OrgDashboard />  */}
             </Route>
             <Route path="/organization">
-                <Register/> 
+                {/* <Organizations/>  */}
             </Route>
             <Route path="/contest">
                 <Register/> 

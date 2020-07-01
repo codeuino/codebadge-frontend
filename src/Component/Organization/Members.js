@@ -1,8 +1,8 @@
 import React, { Component } from "react"; 
 import './Members.css'
-import memberImg from './../images/member.svg'
-import adminTag from './../images/admin-tag.svg'
-import moderatorTag from './../images/moderator.svg'
+import memberImg from './../../images/member.svg'
+import adminTag from './../../images/admin-tag.svg'
+import moderatorTag from './../../images/moderator.svg'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
@@ -51,7 +51,7 @@ class Members extends Component {
 
     queryStringParse(string) {
         let parsed = {}
-        if(string != '') {
+        if(string !== '') {
             string = string.substring(string.indexOf('?')+1)
             let p1 = string.split('&')
             p1.map(function(value) {
@@ -65,13 +65,13 @@ class Members extends Component {
     componentDidMount(){
         var params=this.queryStringParse(window.location.href)
         var username = params.username
-        var myacc=false
+        var myacc=Cookies.getJSON("githubLogin")
         if(username===undefined){
         username=Cookies.getJSON('username')
         myacc=true
         }
         console.log(username)
-        axios.get('http://localhost:3001/github/getOrgMembers',{params:{"token":Cookies.getJSON('token'),username:username,githubLogin:myacc}})
+        axios.get('http://localhost:3001/orgs/github/getOrgMembers',{params:{"token":Cookies.getJSON('token'),username:username,githubLogin:myacc}})
             .then(members=>{
                 this.setState({loading: false,members:members})
             })

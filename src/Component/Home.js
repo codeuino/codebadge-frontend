@@ -3,6 +3,7 @@ import logoImg from './../images/logo.svg'
 import jsImg from './../images/js.svg'
 import './Home.css'
 import Cookies from 'js-cookie'
+import {get} from "axios"
 var clientID;
 var frontend = window.location.origin;
 console.log(frontend);
@@ -15,6 +16,9 @@ if(process.env.NODE_ENV==="production"){
   }
 function login(){
     window.location.href=`https://github.com/login/oauth/authorize?client_id=${clientID}`;
+    // get(`https://github.com/login/oauth/authorize?client_id=${clientID}`,{headers:{"Access-Control-Allow-Origin":"*"}})
+    //     .then(resp=>console.log(resp))
+    //     .catch(err=>console.log(err))
     Cookies.set('githubLogin',true)
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react"; 
-import arrowImg from './../images/expand-arrow.svg'
-import badgeImg from './../images/badge.svg'
-import designTag from './../images/design-tag.svg'
+import arrowImg from './../../images/expand-arrow.svg'
+import badgeImg from './../../images/badge.svg'
+import designTag from './../../images/design-tag.svg'
 import Axios from 'axios'
 import Cookies from 'js-cookie'
 import './Badges.css'
@@ -18,14 +18,14 @@ function dynamicSort(property) {
   }
 }
 
-class Badges extends Component {
+class OrgBadges extends Component {
   state={
     data:[]
   }
 
   queryStringParse(string) {
     let parsed = {}
-    if(string != '') {
+    if(string !== '') {
         string = string.substring(string.indexOf('?')+1)
         let p1 = string.split('&')
         p1.map(function(value) {
@@ -46,7 +46,7 @@ class Badges extends Component {
     }
     console.log(username)
     this.setState({ loading: true }, () => {
-      Axios.get('http://localhost:3001/github/getUserOrgs',{params:{"token":Cookies.getJSON('token'),username:username,githubLogin:myacc}})
+      Axios.get('http://localhost:3001/users/github/getUserOrgs',{params:{"token":Cookies.getJSON('token'),username:username,githubLogin:myacc}})
         .then(result => {
           console.log(result)
           var data=result.data;
@@ -68,7 +68,7 @@ class Badges extends Component {
             return (<div class="c6" key={i}>
             <hr/>
               <p class="organization">Organization</p>
-              <h1 class="heading1">{org.login} <img src={arrowImg} alt="expand"/></h1>
+              <a href={`/org?username=${org.login}`}><h1 class="heading1">{org.login}<img src={arrowImg} alt="expand"/></h1></a>
               <div class="badges">
                 <div class="badge-card">
                   <img src={badgeImg} alt="badge" class="badge-img"/>
@@ -115,4 +115,4 @@ class Badges extends Component {
   }
 }
 
-export default Badges;
+export default OrgBadges;

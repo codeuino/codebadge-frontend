@@ -154,3 +154,39 @@
 .child2{
     min-height:78vh !important;
 }
+
+.active{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 48px;
+    border-bottom: 3px solid #3F8CFF;
+    /* identical to box height, or 240% */
+    letter-spacing: -0.4px;
+
+    color: #3F8CFF;
+}
+.inactive{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 48px;
+
+    /* identical to box height, or 240% */
+    letter-spacing: -0.4px;
+
+    /* Text 1 */
+    color: #76777A;
+}
+
+.line{
+    position: relative;
+    width: 86px;
+    height: 3px;
+    left:0px;
+    bottom: -10px;
+
+    background: #3F8CFF;
+}
